@@ -1,4 +1,3 @@
-
 import { getAllPost } from "@/lib/notion"
 import Link from "next/link"
 
@@ -8,7 +7,7 @@ export default  async function Page() {
     <section>
       <h1 className="mb-5 text-3xl font-serif">📚 My Blog</h1>
       {
-        data.map((item, index) => {
+        data.map((item: any) => {
           return (
             <div key={item.pageId}>
               <Link href={`/blog/${item.slug}`}>

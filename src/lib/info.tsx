@@ -14,6 +14,7 @@ export const About = () =>{
        which is that I can make the world a better place with code.</p>
       <p className='mt-2 font-bold'>I will chronicle and share my daily life and insights on technology on this site, 
         with the aim of reflecting on a particular chapter of my life.</p>
+      <i className='mt-2 font-bold flex'>Love coding, love my girlfriend and my cat.</i>
     </>
   )
 }

@@ -3,9 +3,7 @@ import { Client } from "@notionhq/client"
 const notion = new Client({ auth: process.env.NOTION_KEY })!
 const databaseId = process.env.NOTION_DATABASE_ID!
 
-/**
- * 获取数据库里边的数据
- */
+
 export const getAllPost = async () => {
   const { results } = await notion.databases.query({
     database_id:databaseId
@@ -28,13 +26,13 @@ export const getAllPost = async () => {
   return res;
 } 
 
-/**
- * 根据文章id获取内容
- * @param id 
- * @returns 
- */
-export const getPageData =  async (id: string) =>{   
-    // 获取 page 的 Block 内容
+export const getPageId = async (slug: string) =>{
+  const postList = await getAllPost();
+  return postList.find((item: any) => item.slug === slug)?.pageId;
+}
+
+export const getPageData =  async (slug: string) =>{   
+    const id = await getPageId(slug);
     const { results: blockResults } = await notion.blocks.children.list({
       block_id: id,
     });
