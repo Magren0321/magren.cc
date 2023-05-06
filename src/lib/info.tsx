@@ -1,3 +1,5 @@
+"use client"
+
 import TechnologyMdx from '@/mdx/TechnologyMdx.mdx'
 import WakaTimeMdx from '@/mdx/WakaTimeMdx.mdx'
 import Link from 'next/link'

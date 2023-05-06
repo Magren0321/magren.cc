@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import Avatar from '@/components/ui/Avatar';
 import { About, Technology , WakaTime } from '@/lib/info';

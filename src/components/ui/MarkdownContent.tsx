@@ -1,3 +1,5 @@
+"use client"
+
 export default function MarkdownWrapper({
 	children,
 }: {

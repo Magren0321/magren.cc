@@ -8,18 +8,20 @@ export const getAllPost = async () => {
   const { results } = await notion.databases.query({
     database_id:databaseId
   });
-  // 遍历查询结果
+
   const res = results.map((result: any) => {
-    // 获取 page 的 id、title 和时间
+
     const pageId = result.id;
     const pageTitle = result.properties.name.title[0].plain_text;
     const pageTime = result.properties.date.date.start;
+    const pageTags = result.properties.tags.multi_select;
     const slug = result.properties.slug.rich_text[0].plain_text;
 
     return {
       pageId,
       pageTitle,
       pageTime,
+      pageTags,
       slug
     }
   });
@@ -28,13 +30,16 @@ export const getAllPost = async () => {
 
 export const getPageId = async (slug: string) =>{
   const postList = await getAllPost();
-  return postList.find((item: any) => item.slug === slug)?.pageId;
+  return postList.find((item: any) => item.slug === slug);
 }
 
 export const getPageData =  async (slug: string) =>{   
-    const id = await getPageId(slug);
+    const page = await getPageId(slug);
     const { results: blockResults } = await notion.blocks.children.list({
-      block_id: id,
+      block_id: page?.pageId,
     });
-    return blockResults;
+    return {
+      page,
+      blockResults
+    }
 }
