@@ -1,7 +1,7 @@
 import { getAllPost } from "@/lib/notion"
 import Link from "next/link"
 
-export default  async function Page() {
+export default async function Page() {
   const data = await getAllPost()
   return (
     <section>

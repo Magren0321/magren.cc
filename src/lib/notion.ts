@@ -1,14 +1,21 @@
-import { Client } from "@notionhq/client"
-
-const notion = new Client({ auth: process.env.NOTION_KEY })!
+const notionToken = process.env.NOTION_KEY!;
 const databaseId = process.env.NOTION_DATABASE_ID!
 
+const fetcher = (url: string, option: any) =>
+  fetch(url, {
+    ...option,
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "Notion-Version": "2022-06-28",
+      Authorization: `Bearer ${notionToken}`,
+    },
+  }).then((res) => res.json());
 
 export const getAllPost = async () => {
-  const { results } = await notion.databases.query({
-    database_id:databaseId
+  const { results } = await fetcher(`https://api.notion.com/v1/databases/${databaseId}/query`, {
+    method: "POST",
   });
-
   const res = results.map((result: any) => {
 
     const pageId = result.id;
@@ -26,7 +33,7 @@ export const getAllPost = async () => {
     }
   });
   return res;
-} 
+}
 
 export const getPageId = async (slug: string) =>{
   const postList = await getAllPost();
@@ -35,9 +42,9 @@ export const getPageId = async (slug: string) =>{
 
 export const getPageData =  async (slug: string) =>{   
     const page = await getPageId(slug);
-    const { results: blockResults } = await notion.blocks.children.list({
-      block_id: page?.pageId,
-    });
+    const {result : blockResults} = await fetcher(`https://api.notion.com/v1/blocks/${page.pageId}/children`, {
+      method: "GET"
+    })
     return {
       page,
       blockResults
