@@ -16,6 +16,7 @@ export const getAllPost = async () => {
   const { results } = await fetcher(`https://api.notion.com/v1/databases/${databaseId}/query`, {
     method: "POST",
   });
+
   const res = results.map((result: any) => {
 
     const pageId = result.id;
@@ -23,15 +24,20 @@ export const getAllPost = async () => {
     const pageTime = result.properties.date.date.start;
     const pageTags = result.properties.tags.multi_select;
     const slug = result.properties.slug.rich_text[0].plain_text;
-
-    return {
-      pageId,
-      pageTitle,
-      pageTime,
-      pageTags,
-      slug
+    const isPublic = result.properties.isPublic.checkbox;
+    
+    if(isPublic){
+      return {
+        pageId,
+        pageTitle,
+        pageTime,
+        pageTags,
+        slug,
+        isPublic
+      }
     }
-  });
+  }).filter(Boolean);
+
   return res;
 }
 
@@ -42,11 +48,12 @@ export const getPageId = async (slug: string) =>{
 
 export const getPageData =  async (slug: string) =>{   
     const page = await getPageId(slug);
-    const {result : blockResults} = await fetcher(`https://api.notion.com/v1/blocks/${page.pageId}/children`, {
+    const { results } = await fetcher(`https://api.notion.com/v1/blocks/${page.pageId}/children`, {
       method: "GET"
     })
+
     return {
       page,
-      blockResults
+      blockResults: results
     }
 }

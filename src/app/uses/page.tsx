@@ -1,5 +1,5 @@
 import Uses from '@/mdx/Uses.mdx';
-import MarkdownWrapper from '@/components/ui/MarkdownContent';
+import MarkdownWrapper from '@/components/MarkdownContent';
 
 export default function Page() {
   return (
