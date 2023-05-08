@@ -1,5 +1,7 @@
 import { getPageData } from '@/lib/notion'
 import NotionContent from '@/components/NotionContent'
+import { Metadata } from "next"
+
 export default async function Page({params}:{params:{slug: string}}) {
   const {page,blockResults} = await getPageData(params.slug)
   
@@ -18,4 +20,13 @@ export default async function Page({params}:{params:{slug: string}}) {
       </div>
     </section>
   )
+}
+
+export async function generateMetadata({
+	params,
+}: {
+	params: { slug: string }
+}): Promise<Metadata> {
+	const { page } = await getPageData(params.slug)
+	return { title: page?.pageTitle }
 }
