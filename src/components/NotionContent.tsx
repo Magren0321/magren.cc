@@ -11,7 +11,7 @@ export const Text = ({ text } : any) => {
   if (!text) {
     return null;
   }
-  return text.map((value: any) => {
+  return text.map((value: any, index: number) => {
     const {
       annotations: { bold, code, color, italic, strikethrough, underline },
       text,
@@ -20,7 +20,7 @@ export const Text = ({ text } : any) => {
       <span
         className={cx({
             "font-bold": bold,
-            "font-mono bg-gray-100 dark:bg-gray-800": code,
+            "font-mono bg-gray-100 p-1 rounded dark:bg-gray-800": code,
             "text-red-500": color === "red",
             "text-green-500": color === "green",
             "text-blue-500": color === "blue",
@@ -34,7 +34,7 @@ export const Text = ({ text } : any) => {
             underline
           })
         }
-        key={text.content}
+        key={text.content + index}
       >
         {text.link ? <Link href={text.link.url} className="underline">{text.content}</Link> : text.content}
       </span>
@@ -133,7 +133,7 @@ const renderBlock = (block :any) => {
       return (
         <figure className=" flex my-5 justify-center">
           <div className="flex flex-col">
-            <Image src={src} alt={caption} width={500} height={500}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
+            <Image src={src} alt={caption || 'image'}  width={500} height={500} className="h-auto w-auto" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
             {caption && <figcaption className="text-[#696969] text-sm mt-1">{caption}</figcaption>}
           </div>
         </figure>
@@ -210,7 +210,7 @@ const renderBlock = (block :any) => {
 export default function NotionContent({ blocks } : any){
   
   return (
-    <section className="mt-5">
+    <section className="mt-5 leading-8">
       {blocks.map((block :any) => (
         <Fragment key={block.id}>{renderBlock(block)}</Fragment>
       ))}

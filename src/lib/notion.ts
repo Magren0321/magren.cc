@@ -1,7 +1,7 @@
 const notionToken = process.env.NOTION_KEY!;
 const databaseId = process.env.NOTION_DATABASE_ID!
 
-const revalidate = 60 * 60 * 2; // 2 hours
+const revalidate = 60 * 60; // 1 hours
 const fetcher = (url: string, option: any) =>
   fetch(url, {
     ...option,
