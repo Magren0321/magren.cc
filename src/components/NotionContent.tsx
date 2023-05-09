@@ -147,7 +147,7 @@ const renderBlock = (block :any) => {
     case "code":
       const { language = 'html' } = value
       return (
-        <pre className="my-5">
+        <pre className="my-5 text-sm">
           <SyntaxHighlighter language={language} style={github} key={id} showLineNumbers>
             {value.rich_text[0].plain_text}
           </SyntaxHighlighter>
