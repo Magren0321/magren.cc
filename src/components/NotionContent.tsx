@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import cx from "classnames";
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export const Text = ({ text } : any) => {
   if (!text) {
@@ -148,7 +148,7 @@ const renderBlock = (block :any) => {
       const { language = 'html' } = value
       return (
         <pre className="my-5">
-          <SyntaxHighlighter language={language} style={docco} key={id} showLineNumbers>
+          <SyntaxHighlighter language={language} style={github} key={id} showLineNumbers>
             {value.rich_text[0].plain_text}
           </SyntaxHighlighter>
         </pre>
@@ -210,7 +210,7 @@ const renderBlock = (block :any) => {
 export default function NotionContent({ blocks } : any){
   
   return (
-    <section className="mt-5 leading-8">
+    <section className="mt-5 leading-8 font-serif">
       {blocks.map((block :any) => (
         <Fragment key={block.id}>{renderBlock(block)}</Fragment>
       ))}
