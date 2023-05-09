@@ -9,6 +9,7 @@ const fetcher = (url: string, option: any) =>
       "Content-Type": "application/json",
       "Notion-Version": "2022-06-28",
       Authorization: `Bearer ${notionToken}`,
+      "Cache-Control": "no-cache"
     },
   }).then((res) => res.json());
 
@@ -51,7 +52,6 @@ export const getPageData =  async (slug: string) =>{
     const { results } = await fetcher(`https://api.notion.com/v1/blocks/${page.pageId}/children`, {
       method: "GET"
     })
-
     return {
       page,
       blockResults: results

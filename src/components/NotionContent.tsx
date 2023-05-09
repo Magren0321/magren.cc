@@ -1,7 +1,11 @@
+'use client'
+
 import { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import cx from "classnames";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export const Text = ({ text } : any) => {
   if (!text) {
@@ -42,7 +46,6 @@ const renderNestedList = (block: any) => {
   const { type } = block;
   const value = block[type];
   if (!value) return null;
-
   const isNumberedList = value.children[0].type === "numbered_list_item";
 
   if (isNumberedList) {
@@ -128,9 +131,11 @@ const renderBlock = (block :any) => {
         value.type === "external" ? value.external.url : value.file.url;
       const caption = value.caption ? value.caption[0]?.plain_text : "";
       return (
-        <figure>
-          <Image src={src} alt={caption} />
-          {caption && <figcaption>{caption}</figcaption>}
+        <figure className=" flex my-5 justify-center">
+          <div className="flex flex-col">
+            <Image src={src} alt={caption} width={500} height={500}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
+            {caption && <figcaption className="text-[#696969] text-sm mt-1">{caption}</figcaption>}
+          </div>
         </figure>
       );
     case "divider":
@@ -138,11 +143,12 @@ const renderBlock = (block :any) => {
     case "quote":
       return <blockquote key={id} className="border-solid border-l-4 px-3 my-3">{value.rich_text[0].plain_text}</blockquote>;
     case "code":
+      const { language = 'html' } = value
       return (
-        <pre>
-          <code key={id}>
+        <pre className="my-5">
+          <SyntaxHighlighter language={language} style={docco} key={id} showLineNumbers>
             {value.rich_text[0].plain_text}
-          </code>
+          </SyntaxHighlighter>
         </pre>
       );
     case "callout":
