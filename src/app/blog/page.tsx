@@ -10,7 +10,7 @@ export default async function Page() {
         data.map((item: any) => {
           return (
             <div key={item.pageId}>
-              <Link href={`/blog/${item.slug}`}>
+              <Link prefetch href={`/blog/${item.slug}`}>
                 <div className="w-full flex flex-col mb-5">
                   <p className="font-mono mb-1">{item.pageTitle}</p>
                   <p className="font-mono text-sm text-neutral-500 tracking-tighter">{item.pageTime}</p>
