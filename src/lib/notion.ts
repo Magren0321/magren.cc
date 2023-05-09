@@ -1,6 +1,7 @@
 const notionToken = process.env.NOTION_KEY!;
 const databaseId = process.env.NOTION_DATABASE_ID!
 
+const revalidate = 60 * 60 * 2; // 2 hours
 const fetcher = (url: string, option: any) =>
   fetch(url, {
     ...option,
@@ -8,8 +9,10 @@ const fetcher = (url: string, option: any) =>
       Accept: "application/json",
       "Content-Type": "application/json",
       "Notion-Version": "2022-06-28",
-      Authorization: `Bearer ${notionToken}`,
-      "Cache-Control": "no-cache"
+      Authorization: `Bearer ${notionToken}`
+    },
+    next: {
+      revalidate,
     },
   }).then((res) => res.json());
 

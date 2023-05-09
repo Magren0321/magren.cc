@@ -36,7 +36,7 @@ export const Text = ({ text } : any) => {
         }
         key={text.content}
       >
-        {text.link ? <Link href={text.link.url}>{text.content}</Link> : text.content}
+        {text.link ? <Link href={text.link.url} className="underline">{text.content}</Link> : text.content}
       </span>
     );
   });
@@ -141,7 +141,9 @@ const renderBlock = (block :any) => {
     case "divider":
       return <hr key={id} />;
     case "quote":
-      return <blockquote key={id} className="border-solid border-l-4 px-3 my-3">{value.rich_text[0].plain_text}</blockquote>;
+      return <blockquote key={id} className="border-solid border-l-4 px-3 my-3">
+        <Text text={value.rich_text} />
+      </blockquote>;
     case "code":
       const { language = 'html' } = value
       return (
