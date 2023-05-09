@@ -32,7 +32,7 @@ export const Text = ({ text } : any) => {
             italic,
             "line-through": strikethrough,
             underline
-          })
+          },"break-all")
         }
         key={text.content + index}
       >
