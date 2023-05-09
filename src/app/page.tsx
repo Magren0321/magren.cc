@@ -30,11 +30,11 @@ export default function Home() {
       <div className='mt-5'>
         <h2 className='font-bold'>📝 Find me</h2>
         <ul className='list-disc ml-5 mt-1'>
-          <li>Github:<a href="https://github.com/Magren0321" className='ml-1 underline' target='_bank'>Magren0321</a></li>
-          <li>Twitter:<a href="https://twitter.com/Magren_lin" className='ml-1 underline' target='_bank'>Magren</a></li>
-          <li>Telegram:<a href="https://t.me/Magren_lin" className='ml-1 underline' target='_bank'>Magren</a></li>
-          <li>E-mail:<a href="mailto:zhuhenglin21@gmail.com" className='ml-1 underline'>zhuhenglin21@gmail.com</a></li>
-          <li>Nintendo FC: SW-1418-2466-9500</li>
+          <li className='my-1'>Github:<a href="https://github.com/Magren0321" className='ml-1 underline' target='_bank'>Magren0321</a></li>
+          <li className='my-1'>Twitter:<a href="https://twitter.com/Magren_lin" className='ml-1 underline' target='_bank'>Magren</a></li>
+          <li className='my-1'>Telegram:<a href="https://t.me/Magren_lin" className='ml-1 underline' target='_bank'>Magren</a></li>
+          <li className='my-1'>E-mail:<a href="mailto:zhuhenglin21@gmail.com" className='ml-1 underline'>zhuhenglin21@gmail.com</a></li>
+          <li className='my-1'>Nintendo FC: SW-1418-2466-9500</li>
         </ul>
       </div>
     </main>
