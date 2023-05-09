@@ -6,7 +6,7 @@ export default function MarkdownWrapper({
 	children: React.ReactNode
 }) {
 	return (
-		<article className="flex flex-col markdown">
+		<article className="flex flex-col markdown text-black dark:text-white">
 			{children}
 		</article>
 	)
