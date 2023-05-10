@@ -44,19 +44,10 @@ export default function Navbar() {
                       'font-bold': isActive,
                     })}
                   >
-                    <span className="relative py-[5px] px-[10px]">
+                    <span className={cx('relative py-[5px] px-[10px]',{
+                      'bg-neutral-100 dark:bg-neutral-800 rounded-md': isActive,
+                    })}>
                       {name}
-                      {path === pathname ? (
-                        <motion.div
-                          className="absolute inset-0 bg-neutral-100 dark:bg-neutral-800 rounded-md z-[-1]"
-                          layoutId="sidebar"
-                          transition={{
-                            type: 'spring',
-                            stiffness: 350,
-                            damping: 30,
-                          }}
-                        />
-                      ) : null}
                     </span>
                   </Link>
                 );
