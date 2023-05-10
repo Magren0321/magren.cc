@@ -132,9 +132,9 @@ const renderBlock = (block :any) => {
       const caption = value.caption ? value.caption[0]?.plain_text : "";
       return (
         <figure className=" flex my-5 justify-center">
-          <div className="flex flex-col">
-            <Image src={src} alt={caption || 'image'}  width={500} height={500} className="h-auto w-auto" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
-            {caption && <figcaption className="text-[#696969] text-sm mt-1">{caption}</figcaption>}
+          <div className="flex flex-col w-full items-center">
+            <Image src={src} alt={caption || 'image'}  width={400} height={400} className="w-[100%] sm:w-[60%]" priority />
+            {caption && <figcaption className="text-[#696969] text-sm mt-1 w-[100%] sm:w-[60%]">{caption}</figcaption>}
           </div>
         </figure>
       );
