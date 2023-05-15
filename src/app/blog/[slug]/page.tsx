@@ -1,6 +1,7 @@
 import { getPageData } from '@/lib/notion'
 import NotionContent from '@/components/NotionContent'
 import { Metadata } from "next"
+import Link from 'next/link'
 
 export default async function Page({params}:{params:{slug: string}}) {
   const {page,blockResults} = await getPageData(params.slug)
@@ -17,6 +18,9 @@ export default async function Page({params}:{params:{slug: string}}) {
       </div>
       <div>
         <NotionContent blocks={blockResults}/>
+      </div>
+      <div className='mt-10 font-mono opacity-50 hover:opacity-75'>
+        <Link href={'/blog'}>{'>'}<span className='border-solid border-b-2 border-b-[#000] ml-2'>cd . . </span></Link>
       </div>
     </section>
   )
