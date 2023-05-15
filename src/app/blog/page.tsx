@@ -9,9 +9,9 @@ export default async function Page() {
       {
         data.map((item: any) => {
           return (
-            <div key={item.pageId}>
+            <div key={item.pageId} className="w-fit px-2 py-1 mb-4 rounded hover:bg-[#eee] dark:hover:bg-[#444]">
               <Link href={`/blog/${item.slug}`}>
-                <div className="w-full flex flex-col mb-5">
+                <div className="flex flex-col">
                   <p className="font-mono mb-1">{item.pageTitle}</p>
                   <p className="font-mono text-sm text-neutral-500 tracking-tighter">{item.pageTime}</p>
                 </div>
