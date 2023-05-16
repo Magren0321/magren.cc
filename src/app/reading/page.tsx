@@ -6,7 +6,7 @@ export default async function Page() {
   return (
     <section>
       <h1 className="mb-5 text-3xl font-serif">📖 My Reading List</h1>
-      <span className='mt-5 text-xl font-serif'>Since 2021</span>
+      <span className='mt-5 text-xl font-serif'> Since 2021 </span>
       {
         data.map(([key, value]) => {
           return(
