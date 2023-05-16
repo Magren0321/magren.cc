@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import cx from "classnames";
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { github , darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export const Text = ({ text } : any) => {
   if (!text) {
@@ -147,11 +147,18 @@ const renderBlock = (block :any) => {
     case "code":
       const { language = 'html' } = value
       return (
-        <pre className="my-5 text-sm">
-          <SyntaxHighlighter language={language} style={github} key={id} showLineNumbers>
-            {value.rich_text[0].plain_text}
-          </SyntaxHighlighter>
-        </pre>
+        <div className="my-5">
+          <pre className="text-sm dark:hidden">
+            <SyntaxHighlighter language={language} style={github} key={id} showLineNumbers>
+              {value.rich_text[0].plain_text}
+            </SyntaxHighlighter>
+          </pre>
+          <pre className="text-sm hidden dark:block">
+            <SyntaxHighlighter language={language} style={darcula} key={id} showLineNumbers>
+              {value.rich_text[0].plain_text}
+            </SyntaxHighlighter>
+          </pre>
+        </div>
       );
     case "callout":
       return (
