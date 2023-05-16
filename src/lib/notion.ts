@@ -28,7 +28,7 @@ export const getAllPost = async () => {
   const res = results.map((result: any) => {
 
     const pageId = result.id;
-    const pageTitle = result.properties.name.title[0].text.content;
+    const pageTitle = result.properties.name.title[0].plain_text;
     const pageTime = result.properties.date.date.start;
     const pageTags = result.properties.tags.multi_select;
     const slug = result.properties.slug.rich_text[0].plain_text;
