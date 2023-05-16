@@ -15,6 +15,9 @@ const navItems = {
   '/blog': {
     name: 'Blog',
   },
+  '/reading': {
+    name: 'Reading',
+  }
 };
 
 
@@ -32,7 +35,7 @@ export default function Navbar() {
             className="flex flex-row md:flex-col mb-3 items-start relative px-4 md:px-0 pb-0 fade"
             id="nav"
           >
-            <div className="flex flex-row md:flex-col space-x-0 pr-10 mb-2 mt-2 md:mt-0">
+            <div className="flex flex-row md:flex-col space-x-0 mb-2 mt-2 md:mt-0 ">
               {Object.entries(navItems).map(([path, { name }]) => {
                 const isActive = path === pathname;
                 return (

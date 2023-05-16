@@ -1,5 +1,8 @@
+import { BookType } from "@/types";
+
 const notionToken = process.env.NOTION_KEY!;
 const databaseId = process.env.NOTION_DATABASE_ID!
+const notionBookDatabaseId = process.env.NOTION_BOOK_ID!;
 
 const revalidate = 60 * 60 * 2; // 2 hours
 
@@ -60,4 +63,43 @@ export const getPageData =  async (slug: string) =>{
       page,
       blockResults: results
     }
+}
+
+export const getBook = async () => {
+  const { results } = await fetcher(`https://api.notion.com/v1/databases/${notionBookDatabaseId}/query`, {
+    method: "POST",
+  });
+  const Reading: BookType[] = [];
+  const Done: BookType[] = [];
+  const Plan: BookType[] = [];
+
+  results.map((result: any) => {
+    const pageId = result.id;
+    const name = result.properties.Name.title[0].plain_text;
+    const status = result.properties.Status.status.name;
+    const endTime = result.properties.EndTime.select ? result.properties.EndTime.select.name : '';
+    const obj = {
+      pageId,
+      name,
+      status,
+      endTime
+    }
+    switch (status) {
+      case 'Reading':
+        Reading.push(obj);
+        break;
+      case 'Done':
+        Done.push(obj);
+        break;
+      case 'Ready to start':
+        Plan.push(obj);
+        break;
+    }
+  })
+
+  return {
+    Reading,
+    Plan,
+    Done
+  }
 }
