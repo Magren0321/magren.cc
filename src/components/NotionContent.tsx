@@ -67,19 +67,19 @@ const renderBlock = (block :any) => {
       );
     case "heading_1":
       return (
-        <h1 className="text-3xl mb-4 mt-8 font-bold">
+        <h1 className="text-3xl mb-6 mt-8 font-bold">
           <Text text={value.rich_text} />
         </h1>
       );
     case "heading_2":
       return (
-        <h2 className="text-2xl mb-4 mt-8 font-bold">
+        <h2 className="text-2xl mb-6 mt-8 font-bold">
           <Text text={value.rich_text} />
         </h2>
       );
     case "heading_3":
       return (
-        <h3 className="text-xl mb-4 mt-8 font-bold">
+        <h3 className="text-xl mb-6 mt-8 font-bold">
           <Text text={value.rich_text} />
         </h3>
       );
@@ -217,7 +217,7 @@ const renderBlock = (block :any) => {
 export default function NotionContent({ blocks } : any){
   
   return (
-    <section className="mt-8 leading-8 font-serif">
+    <section className="mt-8 leading-8">
       {blocks.map((block :any) => (
         <Fragment key={block.id}>{renderBlock(block)}</Fragment>
       ))}
