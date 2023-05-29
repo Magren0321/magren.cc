@@ -155,8 +155,7 @@ const NextTopLoader = ({
           const parseCurrentUrl = new URL(currentUrl);
           const parseNewUrl = new URL(newUrl);
           if(parseCurrentUrl.hostname === parseNewUrl.hostname 
-            && parseCurrentUrl.pathname === parseNewUrl.pathname 
-            && parseCurrentUrl.hash !== parseNewUrl.hash){
+            && parseCurrentUrl.pathname === parseNewUrl.pathname){
             return
           }
 
