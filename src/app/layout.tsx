@@ -1,6 +1,6 @@
 import './globals.css'
 import Sidebar from '../components/sidebar'
-import NextTopLoader from 'nextjs-toploader'
+import TopBar from '../components/TopBar'
 
 export const metadata = {
   title: "Magren's Blog"
@@ -14,8 +14,9 @@ export default function RootLayout({
   return (
     <html lang="zh-Hans" className='text-black bg-white dark:text-white dark:bg-[#111010]'>
       <body className='antialiased max-w-4xl mb-40 flex flex-col md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto'>
-        <NextTopLoader 
+        <TopBar 
           color="#000000"
+          darkColor='#ffffff'
           initialPosition={0.08}
           crawlSpeed={200}
           height={2}
