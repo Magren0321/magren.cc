@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="zh-Hans" className='text-black bg-white dark:text-white dark:bg-[#111010]'>
+    <html lang="zh-Hans" className='scroll-smooth text-black bg-white dark:text-white dark:bg-[#111010]'>
       <body className='antialiased max-w-4xl mb-40 flex flex-col md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto'>
         <TopBar 
           color="#000000"

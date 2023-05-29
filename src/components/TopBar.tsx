@@ -150,6 +150,16 @@ const NextTopLoader = ({
           const newUrl = (anchor as HTMLAnchorElement).href;
           const isExternalLink = (anchor as HTMLAnchorElement).target === '_blank';
           const isAnchor = isAnchorOfCurrentUrl(currentUrl, newUrl);
+          
+          // If only the hash is different, do not show the loading bar.
+          const parseCurrentUrl = new URL(currentUrl);
+          const parseNewUrl = new URL(newUrl);
+          if(parseCurrentUrl.hostname === parseNewUrl.hostname 
+            && parseCurrentUrl.pathname === parseNewUrl.pathname 
+            && parseCurrentUrl.hash !== parseNewUrl.hash){
+            return
+          }
+
           if (newUrl === currentUrl || isAnchor || isExternalLink) {
             NProgress.start();
             NProgress.done();
