@@ -8,7 +8,7 @@ export default async function Page({params}:{params:{slug: string}}) {
   
   return (
     <section>
-      <h1 className='text-4xl font-bold mb-5'>{page?.pageTitle}</h1>
+      <p className='text-4xl font-bold mb-5'>{page?.pageTitle}</p>
       <div className='text-gray-400 flex items-center flex-wrap'>{page?.pageTime} · 
         {
           page?.pageTags?.map((tag: any, index: number) => (
