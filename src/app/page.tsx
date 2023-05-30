@@ -18,8 +18,8 @@ export default function Home() {
         <About />
       </div>
       <div className='mt-5'>
-        <h2 className='font-bold'>💻 I can...</h2>
-        <div className='flex flex-wrap space-x-2 space-y-1'>
+        <h2 className='font-bold'>💻 Skills and tools</h2>
+        <div className='mt-2'>
           <Technology />
         </div>
       </div>
