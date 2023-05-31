@@ -16,9 +16,7 @@ export default async function Page({params}:{params:{slug: string}}) {
           ))
         }
       </div>
-      <div>
-        <NotionContent blocks={blockResults}/>
-      </div>
+      <NotionContent blocks={blockResults}/>
       <div className='mt-10 font-mono opacity-50 hover:opacity-75'>
         <Link href={'/blog'}>{'>'}<span className='border-solid border-b-2 border-b-[#000] ml-2 dark:border-b-[#fff]'>cd . . </span></Link>
       </div>

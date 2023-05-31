@@ -3,6 +3,7 @@
 import { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import TableOfContents from "./TableOfContents";
 import cx from "classnames";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { github , darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -215,10 +216,15 @@ const renderBlock = (block :any) => {
 
 export default function NotionContent({ blocks } : {blocks: any}){
   return (
-    <section className="mt-8 leading-8">
-      {blocks.map((block :any) => (
-        <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-      ))}
-    </section>
+    <div className='flex flex-row justify-between'>
+      <article className='leading-8 w-full lg:w-[640px]'>
+        {blocks.map((block :any) => (
+          <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+        ))}
+      </article>
+      <div className='sticky h-fit top-14 max-w-[270px] hidden lg:block'>
+        <TableOfContents />
+      </div>
+    </div>
   )
 }
