@@ -1,10 +1,15 @@
 'use client'
 
 import { useHeadings } from "@/hooks/useHead"
+import { useScroll } from "@/hooks/useScroll"
+import cx from "classnames"
 
 const TableOfContents = () =>{
   const headings = useHeadings()
-
+  const activeId = useScroll(
+    headings.map((heading) => heading.id),
+    { rootMargin: `0% 0% -70% 0%` }
+  )
   return(
     <div className="ml-2">
       {
@@ -19,10 +24,12 @@ const TableOfContents = () =>{
                   level: number
                 }) => {
                   return(
-                    <div key={item.id} className={`w-44 overflow-hidden text-ellipsis whitespace-nowrap text-xl `} style={{
+                    <div key={item.id} className={`w-44 overflow-hidden text-ellipsis whitespace-nowrap`} style={{
                       paddingLeft: (item.level - 1) * 16,
                     }}>
-                      <a href={`#${item.id}`} className='text-sm hover:underline'>{item.title}</a>
+                      <a href={`#${item.id}`} className={cx('text-sm hover:underline',{
+                        'font-bold underline': item.id === activeId,
+                      })}>{item.title}</a>
                     </div>
                   )
                 })
