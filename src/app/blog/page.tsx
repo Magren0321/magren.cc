@@ -31,10 +31,9 @@ export default async function Page() {
             tags.map((item: string) => {
               return (
                 <div key={item} className="w-fit text-sm px-2 py-1 mb-3 mr-3 rounded bg-[#eee] dark:bg-[#444]">
-                  <p className="font-mono">{item}</p>
-                  {/* <Link href={`/blog/tag/${item}`}>
+                  <Link href={`/tag/${item}`}>
                     <p className="font-mono">{item}</p>
-                  </Link> */}
+                  </Link>
                 </div>
               )
             })
