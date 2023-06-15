@@ -7,7 +7,6 @@ export default async function Page({params}: {
   const allPost = (await getAllPost())
   .filter((item: any) => item.pageTags.map((item: any) => item.name).includes(decodeURIComponent(params.slug)));
 
-  console.log(allPost)
   const dataMap: {[key:string]: any} = {}
 
   allPost.forEach((item: any) => {
