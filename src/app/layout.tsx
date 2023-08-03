@@ -3,7 +3,8 @@ import Sidebar from '../components/sidebar'
 import TopBar from '../components/TopBar'
 
 export const metadata = {
-  title: "Magren's Blog"
+  title: "Magren's Blog",
+  description: "唵"
 }
 
 export default function RootLayout({
