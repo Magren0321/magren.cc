@@ -1,8 +1,4 @@
-"use client"
-
-import TechnologyMdx from '@/mdx/TechnologyMdx.mdx'
-import WakaTimeMdx from '@/mdx/WakaTimeMdx.mdx'
-import Link from 'next/link'
+import Image from "next/image"
 
 export const About = () =>{
   return (
@@ -24,15 +20,8 @@ export const About = () =>{
 export const Technology = () =>{
   return(
     <>
-      <TechnologyMdx/>
+      <Image src='/technology.svg' alt='technology' width={500} height={500} className="w-[100%]" priority />
     </>
   )
 }
 
-export const WakaTime = () =>{
-  return(
-    <Link href="https://wakatime.com/@4613633f-2e83-4c6c-ba7e-1d1be6f7757b" target="_blank">
-      <WakaTimeMdx/>
-    </Link>
-  )
-}

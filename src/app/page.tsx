@@ -1,7 +1,7 @@
 "use client"
 
 import Avatar from '@/components/Avatar';
-import { About, Technology , WakaTime } from '@/lib/info';
+import { About, Technology  } from '@/lib/info';
 
 export default function Home() {
   return (
@@ -22,10 +22,6 @@ export default function Home() {
         <div className='mt-2'>
           <Technology />
         </div>
-      </div>
-      <div className='mt-5'>
-        <h2 className='font-bold mb-1'>⏱️ Since February 5th, 2022, I have been coding for...</h2>
-        <div className='ml-1'><WakaTime/></div>
       </div>
       <div className='mt-5'>
         <h2 className='font-bold'>📝 Find me</h2>
