@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/mdx": "^13.3.1",
+    "@waline/client": "^2.15.7",
     "feed": "^4.2.2",
     "framer-motion": "^10.12.4",
     "next": "13.3.0",
