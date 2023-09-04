@@ -29,8 +29,8 @@ export default async function Page({params}:{params:{slug: string}}) {
             '//cdn.jsdelivr.net/gh/walinejs/emojis@1.1.0/tw-emoji'
           ]}
           dark={'auto'}
-          meta={['nick', 'mail']}
-          requiredMeta={['nick', 'mail']}
+          login={'disable'}
+          meta={['nick', 'mail','link']}
           imageUploader={false}
           copyright={false}
         />
