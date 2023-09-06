@@ -4,7 +4,13 @@ import TopBar from '../components/TopBar'
 
 export const metadata = {
   title: "Magren's Blog",
-  description: "唵"
+  description: "不为繁华易匠心",
+  alternates: {
+    canonical: 'https://magren.cc',
+    types: {
+      'application/rss+xml': [{ url: 'feed.xml', title: 'RSS' }],
+    },
+  },
 }
 
 export default function RootLayout({
