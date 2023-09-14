@@ -1,12 +1,17 @@
 import fs from "node:fs/promises";
+import path from "node:path";
 import { serialize } from "next-mdx-remote/serialize"
 import matter from "gray-matter";
 import type { LocalPost, MetaData } from '../types'
 
+const root = process.cwd();
+const POSTS_PATH = path.join(root, "src", "posts");
+
 export async function getPostFromLocal(fileName: string): Promise<LocalPost> {
 
 	const slug = fileName.replace(/\.mdx$/, "")
-	const raw = await fs.readFile(`src/posts/${slug}.mdx`, "utf-8")
+	const filePath = path.join(POSTS_PATH, `${slug}.mdx`);
+	const raw = await fs.readFile(filePath, "utf-8")
 	const { content } = matter(raw)
 	const serialized = await serialize(raw, {
 		parseFrontmatter: true
@@ -22,7 +27,7 @@ export async function getPostFromLocal(fileName: string): Promise<LocalPost> {
 
 
 export async function getMetadataListLocal(): Promise<MetaData[]> {
-	const posts = await fs.readdir("src/posts")
+	const posts = await fs.readdir(POSTS_PATH)
 
 	const postsData = await Promise.all(
 		posts.map(async (post) => {
