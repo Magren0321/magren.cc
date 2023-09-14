@@ -1,6 +1,6 @@
 import RSS from 'rss'
-import { getAllPost } from '../../lib/notion'
-import type { PostType } from '@/types'
+import { getMetadataListLocal } from '@/lib/post'
+import type { MetaData } from '@/types'
 
 export async function GET() {
   const feed = new RSS({
@@ -11,15 +11,15 @@ export async function GET() {
     language: 'en', // 网站语言代码
     image_url: 'https://magren.cc/avatar.png', // 放一个叫 opengraph-image.png 的1200x630尺寸的图片到你的 app 目录下即可
   })
-  const data = await getAllPost()
+  const data = await getMetadataListLocal()
 
-  data.forEach((post: PostType) => {
+  data.forEach((post: MetaData) => {
     feed.item({
-      title: post.pageTitle,
-      guid: post.pageId, 
+      title: post.title,
+      guid: post.slug, 
       url: `https://magren.cc/blog/${post.slug}`,
-      description: post.pageTitle, 
-      date: new Date(post.pageTime), 
+      description: post.description, 
+      date: new Date(post.date), 
     })
   })
  

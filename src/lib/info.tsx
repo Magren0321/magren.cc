@@ -20,7 +20,7 @@ export const About = () =>{
 export const Technology = () =>{
   return(
     <>
-      <Image src='/technology.svg' alt='technology' width={500} height={500} className="w-[100%]" priority />
+      <Image src='/technology.svg' alt='technology' width={800} height={500} priority />
     </>
   )
 }
