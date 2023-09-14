@@ -11,7 +11,7 @@ export default async function Page({params}:{params:{slug: string}}) {
   return (
     <section>
       <p className='text-4xl font-bold mb-5'>{metadata?.title}</p>
-      <div className='text-gray-400 flex items-center flex-wrap'>{metadata?.date} · 
+      <div className='text-gray-700 flex items-center flex-wrap dark:text-gray-200'>{metadata?.date} · 
         {
           metadata?.tags?.map((tag: string, index: number) => (
             <span key={index} className='ml-1 bg-gray-200 px-1 py-[1px] rounded text-sm dark:text-gray-700'>{tag}</span>
