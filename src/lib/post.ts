@@ -6,7 +6,7 @@ import type { LocalPost, MetaData } from '../types'
 export async function getPostFromLocal(fileName: string): Promise<LocalPost> {
 
 	const slug = fileName.replace(/\.mdx$/, "")
-	const raw = await fs.readFile(`posts/${slug}.mdx`, "utf-8")
+	const raw = await fs.readFile(`src/posts/${slug}.mdx`, "utf-8")
 	const { content } = matter(raw)
 	const serialized = await serialize(raw, {
 		parseFrontmatter: true
@@ -22,7 +22,7 @@ export async function getPostFromLocal(fileName: string): Promise<LocalPost> {
 
 
 export async function getMetadataListLocal(): Promise<MetaData[]> {
-	const posts = await fs.readdir("posts")
+	const posts = await fs.readdir("src/posts")
 
 	const postsData = await Promise.all(
 		posts.map(async (post) => {
