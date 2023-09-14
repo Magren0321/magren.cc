@@ -7,6 +7,5 @@ This project is for my personal blog and also for me to learn Next.js.
 I will continuously optimize it.
 
 - Framework: [Next.js](https://nextjs.org/)
-- Database: [Notion](https://www.notion.so/) and [Notion api](https://developers.notion.com/reference/intro)
 - Styling: [Tailwindcss](https://tailwindcss.com)
 - Deployment: [Vercel](https://vercel.com)
