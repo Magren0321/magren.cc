@@ -31,22 +31,6 @@ export default async function Page({params}:{params:{slug: string}}) {
       <div className='mt-10 font-mono opacity-50 hover:opacity-75'>
         <Link href={'/blog'}>{'>'}<span className='border-solid border-b-2 border-b-[#000] ml-2 dark:border-b-[#fff]'>cd . . </span></Link>
       </div>
-
-      <div className='mt-10'>
-        <Waline
-          serverURL='https://waline.magren.cc'
-          path={'/' + params.slug}
-          emoji={[
-            '//cdn.jsdelivr.net/gh/walinejs/emojis@1.1.0/tw-emoji'
-          ]}
-          search={false}
-          dark={'auto'}
-          login={'disable'}
-          meta={['nick', 'mail','link']}
-          imageUploader={false}
-          copyright={false}
-        />
-      </div>
     </section>
   )
 }
