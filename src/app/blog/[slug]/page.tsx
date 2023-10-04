@@ -2,7 +2,6 @@ import { getPostFromLocal } from '@/lib/post'
 import LocalPostContent from '@/components/LocalPostContent'
 import { Metadata } from "next"
 import Link from 'next/link'
-import Waline from '@/components/Waline'
 import TableOfContents from '@/components/TableOfContents'
 
 export default async function Page({params}:{params:{slug: string}}) {
