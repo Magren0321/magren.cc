@@ -2,6 +2,7 @@ import { getPostFromLocal } from '@/lib/post'
 import LocalPostContent from '@/components/LocalPostContent'
 import { Metadata } from "next"
 import Link from 'next/link'
+import Comment from '@/components/Comment'
 import TableOfContents from '@/components/TableOfContents'
 
 export default async function Page({params}:{params:{slug: string}}) {
@@ -30,6 +31,7 @@ export default async function Page({params}:{params:{slug: string}}) {
       <div className='mt-10 font-mono opacity-50 hover:opacity-75'>
         <Link href={'/blog'}>{'>'}<span className='border-solid border-b-2 border-b-[#000] ml-2 dark:border-b-[#fff]'>cd . . </span></Link>
       </div>
+      <Comment />
     </section>
   )
 }
