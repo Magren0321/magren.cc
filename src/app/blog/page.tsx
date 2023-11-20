@@ -9,7 +9,7 @@ export default async function Page() {
   return (
     <section className="flex">
       <div className="w-full lg:w-[600px]">
-        <h1 className="mb-5 text-3xl font-serif">📚 My Blog</h1>
+        <h1 className="mb-5 text-3xl font-bold">📚 My Blog</h1>
         {
           data.map((item: MetaData) => {
             return (

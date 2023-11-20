@@ -14,25 +14,14 @@ export default function Home() {
         </div>
       </div>
       <div className='mt-5'>
-      <h2 className='font-bold'>🌟 About me</h2>
+      <h2 className='font-bold text-xl'>🌟 About me</h2>
         <About />
       </div>
       <div className='mt-5'>
-        <h2 className='font-bold'>💻 Skills and tools</h2>
-        <div className='mt-2'>
+        <h2 className='font-bold text-xl'>💻 Skills and tools</h2>
+        <div className='mt-5'>
           <Technology />
         </div>
-      </div>
-      <div className='mt-5'>
-        <h2 className='font-bold'>📝 Find me</h2>
-        <ul className='list-disc ml-5 mt-1'>
-          <li className='my-1'>Github:<a href="https://github.com/Magren0321" className='ml-1 underline' >Magren0321</a></li>
-          <li className='my-1'>Twitter:<a href="https://twitter.com/Magren_lin" className='ml-1 underline'>Magren</a></li>
-          <li className='my-1'>Telegram:<a href="https://t.me/Magren_lin" className='ml-1 underline'>Magren</a></li>
-          <li className='my-1'>E-mail:<a href="mailto:zhuhenglin21@gmail.com" className='ml-1 underline'>zhuhenglin21@gmail.com</a></li>
-          <li className='my-1'>Nintendo FC: SW-1418-2466-9500</li>
-          <li className='my-1'>RSS: <a href="/feed.xml" className='ml-1 underline'>Subscribe via RSS</a></li>
-        </ul>
       </div>
     </main>
   )
