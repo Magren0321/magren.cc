@@ -1,6 +1,7 @@
 "use client"
 
 import Avatar from '@/components/Avatar';
+import SocialList from '@/components/SocialList';
 import { About, Technology  } from '@/lib/info';
 
 export default function Home() {
@@ -12,6 +13,9 @@ export default function Home() {
           <div><i className='mr-1'>Hello</i>👋</div>
           <div><i className='mr-1'>I&apos;m Magren</i>🦊</div>
         </div>
+      </div>
+      <div className='mt-5'>
+        <SocialList />
       </div>
       <div className='mt-5'>
       <h2 className='font-bold text-xl'>🌟 About me</h2>
