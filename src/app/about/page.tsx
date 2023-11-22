@@ -24,20 +24,20 @@ export default function AboutPage() {
         <h2>兴趣爱好</h2>
         <ul>
           <li>
-            偶尔看看书，可以点这里查看 <a href="https://concrete-lightning-e25.notion.site/bad22ab2bf6f4d6c9bf22ee1f911028d?v=7ead59cbdefc48809733e13dbde17e57&pvs=4">我的书单</a>
+            偶尔看看书，可以点这里查看 <a target="_blank" href="https://concrete-lightning-e25.notion.site/bad22ab2bf6f4d6c9bf22ee1f911028d?v=7ead59cbdefc48809733e13dbde17e57&pvs=4">我的书单</a>
           </li>
           <li>
             偶尔打打游戏，<del>任天堂就是世界主宰！</del> 基本上任天堂第一方游戏都很喜欢，PC上Steam里面也有玩一些，最近刚买怪猎，如果缺腿部挂件的话可以加个好友
             <ul>
               <li>
-                <b>Steam</b>： <a  href="https://steamcommunity.com/profiles/76561198811700203/">Magren</a>
+                <b>Steam</b>： <a target="_blank" href="https://steamcommunity.com/profiles/76561198811700203/">Magren</a>
               </li>
               <li>
                 <b>Nintendo FC</b>: SW-1418-2466-9500
               </li>
             </ul>
           </li>
-          <li>偶尔也看看电影，这里可以看到我都看了什么<a href="https://concrete-lightning-e25.notion.site/9400eef421fc4c428c68d8e69454023c?pvs=4">我的影单</a></li>
+          <li>偶尔也看看电影，这里可以看到我都看了什么<a target="_blank" href="https://concrete-lightning-e25.notion.site/9400eef421fc4c428c68d8e69454023c?pvs=4">我的影单</a></li>
         </ul>
         <h2>现状</h2>
         <ul>
@@ -48,10 +48,10 @@ export default function AboutPage() {
         </ul>
         <h2>🛸 Find me</h2>
         <ul>
-          <li>Github: <a href="https://github.com/Magren0321" >Magren0321</a></li>
-          <li>Twitter: <a  href="https://twitter.com/Magren_lin">Magren</a></li>
-          <li>Telegram: <a  href="https://t.me/Magren_lin" >Magren</a></li>
-          <li>E-mail: <a  href="mailto:zhuhenglin21@gmail.com" >zhuhenglin21@gmail.com</a></li>
+          <li>Github: <a target="_blank" href="https://github.com/Magren0321" >Magren0321</a></li>
+          <li>Twitter: <a target="_blank"  href="https://twitter.com/Magren_lin">Magren</a></li>
+          <li>Telegram: <a target="_blank"  href="https://t.me/Magren_lin" >Magren</a></li>
+          <li>E-mail: <a  target="_blank" href="mailto:zhuhenglin21@gmail.com" >zhuhenglin21@gmail.com</a></li>
         </ul>
         <div>
           <h2>Uses</h2>

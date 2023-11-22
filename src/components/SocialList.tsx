@@ -44,7 +44,7 @@ export default function SocialList() {
       {
         socials.map((social, index) => {
           return (
-            <Link href={social.href} key={social.alt}>
+            <Link href={social.href} key={social.alt} target="_blank">
               <social.icon className='w-5 h-5 text-zinc-400 transition hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200'/>
             </Link>
           )
