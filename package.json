@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@giscus/react": "^2.3.0",
     "@next/mdx": "^13.3.1",
+    "@waline/client": "^2.15.7",
     "framer-motion": "^10.12.4",
     "gray-matter": "^4.0.3",
     "next": "13.4.12",
